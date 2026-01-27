@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Curriculum Vitae</title>
+            <style>
+                body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; scroll-behavior: smooth; }
+                header { background: #333; color: white; padding: 1rem; position: fixed; width: 100%; top: 0; }
+                nav a { color: white; margin-right: 15px; text-decoration: none; font-weight: bold; }
+                section { padding: 80px 20px; border-bottom: 1px solid #ccc; min-height: 300px; }
+                .main-hero { background-color: #f4f4f4; text-align: center; padding: 100px 20px; }
+                img { max-width: 200px; border-radius: 50%; }
+                footer { text-align: center; padding: 20px; background: #333; color: white; }
+            </style>
+    </head>
+
+    <body>
+
+        <header>
+            <nav>
+                <a href="#inicio">INICIO</a>
+                <a href="#sobre-mi">SOBRE MI</a>
+                <a href="#proyectos">PROYECTOS</a>
+                <a href="#testimonios">TESTIMONIOS</a>
+                <a href="#contacto">CONTACTO</a>
+            </nav>
+        </header>
+
+        <main id="inicio" class="main-hero">
+            <h1>Mi Curriculum Vitae</h1>
+            <img src="https://via.placeholder.com/200" alt="Mi Foto">
+            <h2>[Tu Nombre Completo Aquí]</h2>
+            <p><strong>FOTO DE PRESENTACIÓN</strong></p>
+            <p>Bienvenido a mi portafolio profesional.</p>
+        </main>
+
+    <hr>
+
+    <section id="sobre-mi">
+        <h2>SECTION 1: Sobre mí</h2>
+        <p>
+        Hola, soy [Tu Nombre]. Aquí puedes redactar tu trayectoria,
+        tus intereses y lo que te apasiona de tu carrera profesional.
+        </p>
+    </section>
+
+    <section id="proyectos">
+        <h2>SECTION 2: Proyectos y Desarrollo Web</h2>
+
+        <h3>Desarrollo Web</h3>
+        <p>Descripción de tus habilidades técnicas en esta área.</p>
+
+        <h3>Artículos</h3>
+        <p>Lista o descripción de artículos que hayas escrito o temas de interés.</p>
+
+        <h3>Mis Proyectos</h3>
+        <ul>
+        <li><strong>Proyecto 1:</strong> Descripción breve de lo que hiciste.</li>
+        <li><strong>Proyecto 2:</strong> Descripción breve de lo que hiciste.</li>
+        </ul>
+    </section>
+
+    <section id="testimonios">
+        <h2>SECTION 3: Testimonios</h2>
+        <blockquote>
+        "Este es un ejemplo de un testimonio de un cliente o colega sobre tu trabajo."
+        <br>— Nombre de la persona
+        </blockquote>
+    </section>
+
+    <section id="contacto">
+        <h2>SECTION 4: Contacto</h2>
+        <p>Si deseas trabajar conmigo, puedes contactarme a través de:</p>
+        <ul>
+        <li>Email: correo@ejemplo.com</li>
+        <li>LinkedIn: /enlace-a-tu-perfil</li>
+        <li>Teléfono: +123 456 789</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mi Portafolio Profesional</p>
+    </footer>
+
+    </body>
+</html>
