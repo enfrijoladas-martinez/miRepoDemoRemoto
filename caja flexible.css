@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    font-size: 12px;
+}
+
+h1{
+    text-align: center;
+    font-size: 4rem;
+    opacity: 0.5;
+}
+
+.container{
+    border: 5px solid black;
+    width: 80%;
+    height: 80%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: space-evenly;
+}
+
+.box{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.uno{
+    background-color: lightgreen;
+}
+
+.dos{
+    background-color: bisque;
+}
+
+.tres{
+    background-color: lightcoral;
+}
+
+.cuatro{
+    background-color: lightpink;
+}
+
+.cinco{
+    background-color: lightsalmon;
+}
+
+.seis{
+    background-color: lightskyblue;
+}
