@@ -1,0 +1,42 @@
+/* Estilos generales */
+*{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Estilos de la tabla */
+.styled-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    caption-side: bottom;
+}
+
+.styled-table caption {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.styled-table th, .styled-table td {
+    padding: 10px;
+}
+
+.styled-table th {
+    background-color: #009688;
+    color: #fff;
+}
+
+.styled-table th, .styled-table td {
+    border: 1px solid #ddd;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #c7e2e0;
+}
+.styled-table tbody tr td:nth-child(3)::after { /* tercer hijo de tr, que es de tipo td, el primer hijo es un th, el segundo es un td, el tercero es un td*/
+    content: "$";
+}

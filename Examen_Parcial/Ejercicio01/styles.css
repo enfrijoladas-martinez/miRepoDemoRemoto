@@ -1,0 +1,50 @@
+/*
+Rellena con los selectores que faltan. 
+Cada hueco contiene un texto de ayuda que explica el tipo de selector 
+que hace falta.
+*/
+
+/*Todos los párrafos*/
+p {   
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/*Encabezados h1 y h2 en main*/
+main h1, main h2 
+ {
+  color: #336699;
+}
+
+/*Todos los enlaces*/
+ a{
+  text-decoration: none;
+  color: #CC3300;
+}
+
+/*Lista no ordenada dentro del div*/
+div ul{
+  list-style-type: square;
+}
+
+/*Elementos li en la lista con clase destacado*/
+.destacado li {
+  font-weight: bold;
+}
+
+/*Elemento boton*/
+button {
+  background-color: #FF9900;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/*Al pasar el cursor encima de*/
+button:hover {
+  background-color: #CC3300;
+  color: white;
+}

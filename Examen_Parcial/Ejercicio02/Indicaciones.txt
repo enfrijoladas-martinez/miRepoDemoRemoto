@@ -1,0 +1,34 @@
+Diseña y crea un menú de navegación horizontal utilizando HTML y CSS. 
+El menú debe contener cuatro enlaces y aplicar estilos específicos.
+
+Instrucciones:
+1.- Dentro del archivo HTML, crea una estructura para el menú de navegación 
+utilizando elementos <nav>, <ul>, <li>, y <a>. 
+El menú debe contener cuatro enlaces con los siguientes nombres: 
+«Inicio», «Servicios», «Nosotros» y «Contacto».
+
+2.- Dentro del archivo CSS, define el estilo global para todos los elementos 
+de la página utilizando el selector universal. Asigna a la fuente la familia 
+Arial y ponla en negrita.
+
+3.- Establece los estilos para la etiqueta <nav>. Asegúrate de que tenga un 
+margen y un relleno de 0 y que su lista de estilos sea none.
+
+4.- Define los estilos para los enlaces dentro del menú de navegación. 
+Establece el ancho en 100px, elimina la decoración de texto, alinea el texto 
+al centro, establece el color de texto en blanco y el color de fondo en negro. 
+Agrega un relleno superior e inferior de 10px y un relleno izquierdo y 
+derecho de 5px. Agrega un borde derecho de 1px sólido con el color #336699. 
+Asegúrate de que los enlaces sean elementos de bloque.
+
+5.- Define los estilos para los elementos de lista dentro del menú de 
+navegación. Utiliza float: left; para que los elementos se coloquen 
+horizontalmente.
+
+6.- Agrega estilos de cambio de color al hacer hover en los enlaces. 
+Cuando el usuario pase el cursor sobre un enlace, cambia el color de 
+fondo a #336699.
+
+7.- Utiliza la pseudo-clase :last-child para seleccionar el último elemento 
+de la lista y, a través de su enlace (<a>), elimina el borde derecho 
+para evitar que aparezca en el último enlace.

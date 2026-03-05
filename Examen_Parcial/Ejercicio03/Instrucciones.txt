@@ -1,0 +1,20 @@
+Crear una galería de imágenes.
+Crea una galería de imágenes utilizando HTML y CSS. La galería debe contener 
+una serie de imágenes con estilos específicos y un título.
+
+Instrucciones:
+
+1.- En el archivo CSS, define el estilo global para todos los elementos utilizando 
+el selector *. Establece el margen a 0.
+
+2.- Establece los estilos para el elemento <h1>. Centra el texto, establece un fondo de 
+color #EDEEEE, color de texto orange, un borde inferior de 3px solid #4caf50, y un 
+relleno de 30px.
+
+3.- Define los estilos para el <div> con el id «galeria». Establece un ancho máximo de 500px y 
+centrar el elemento horizontalmente con margin: 0 auto;.
+
+4.- Establece los estilos para los elementos <img> dentro de la galería. Utiliza float: left; 
+para alinear las imágenes a la izquierda, agrega un relleno de 1.2em para separar las imágenes y 
+aplica los estilos de cambio de color al hacer hover. Cuando el usuario pase el cursor sobre 
+una imagen, cambia el fondo de color a #e8f1f4.

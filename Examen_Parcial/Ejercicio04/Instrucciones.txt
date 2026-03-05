@@ -1,0 +1,4 @@
+Creación de una tabla con productos
+
+1.- Realice las modificaciones necesarias en el archivo index.html para
+aplicar los estilos ya especificados en el archivo styles.css (No debe modificarlo).
