@@ -4,17 +4,26 @@ según las instrucciones y la imágen muestra.
 */
 
 *{
-
+    margin: 0;
 }
+
 h1{
-
+   text-align: center;
+   background-color: #EDEEEE;
+   color: orange;
+   border-bottom: 3px solid #4caf50;
+   padding: 30px;
 }
-#galeria {
 
+#galeria {
+   max-width: 500px;
+   margin: 0 auto;
 }
 #galeria img {
- 
+    float: left;
+    padding: 1.2em;
+
 }
 #galeria img:hover{
-
+    background-color: #e8f1f4;
 }
