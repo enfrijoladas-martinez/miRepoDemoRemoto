@@ -1,0 +1,20 @@
+{
+  "name": "frontbackend",
+  "version": "1.0.0",
+  "description": "Mini proyecto con frontend y backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Estudillo",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
