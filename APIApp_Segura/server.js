@@ -26,8 +26,7 @@ const mimeTypes = {
   ".ico": "image/x-icon"
 };
 
-const protectedPages = new Set(["/home", "/detalles", "/filtran"]);
-const publicPages = new Set(["/", "/login"]);
+const appPages = new Set(["/", "/login", "/home", "/detalles", "/filtran"]);
 
 function parseCookies(cookieHeader = "") {
   return Object.fromEntries(
@@ -92,11 +91,6 @@ function send(res, statusCode, body, contentType = "text/plain; charset=utf-8", 
 
 function sendJson(res, statusCode, data, headers = {}) {
   send(res, statusCode, JSON.stringify(data), "application/json; charset=utf-8", headers);
-}
-
-function redirect(res, location) {
-  res.writeHead(302, { Location: location });
-  res.end();
 }
 
 function serveFile(res, filePath) {
@@ -233,19 +227,7 @@ async function handleApi(req, res, pathname) {
 }
 
 function handlePage(req, res, pathname) {
-  const session = getSession(req);
-
-  if (protectedPages.has(pathname) && !session) {
-    redirect(res, "/login");
-    return;
-  }
-
-  if (publicPages.has(pathname) && session) {
-    redirect(res, "/home");
-    return;
-  }
-
-  if (publicPages.has(pathname) || protectedPages.has(pathname)) {
+  if (appPages.has(pathname)) {
     serveFile(res, path.join(PUBLIC_DIR, "index.html"));
     return;
   }

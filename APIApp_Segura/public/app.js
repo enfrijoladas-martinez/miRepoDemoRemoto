@@ -7,6 +7,9 @@ const routes = {
   "/filtran": renderFilter
 };
 
+const protectedRoutes = new Set(["/home", "/detalles", "/filtran"]);
+let sessionCache = null;
+
 function titleCase(value) {
   return value
     .split("-")
@@ -34,6 +37,41 @@ function navigate(path) {
   renderRoute();
 }
 
+function replaceRoute(path) {
+  window.history.replaceState({}, "", path);
+  renderRoute();
+}
+
+function showLoading(message = "Validando sesion...") {
+  app.innerHTML = `
+    <main class="login-page">
+      <section class="login-panel single-panel">
+        <h1>APIApp Segura</h1>
+        <p class="muted">${message}</p>
+      </section>
+    </main>
+  `;
+}
+
+async function getCurrentSession(force = false) {
+  if (sessionCache && !force) return sessionCache;
+  const session = await api("/api/session");
+  sessionCache = session.user;
+  return sessionCache;
+}
+
+async function secureRoute(view) {
+  showLoading();
+
+  try {
+    const user = await getCurrentSession();
+    view(user);
+  } catch {
+    sessionCache = null;
+    replaceRoute("/login");
+  }
+}
+
 function layout(content) {
   app.innerHTML = `
     <header class="topbar">
@@ -53,6 +91,7 @@ function layout(content) {
 
   document.querySelector("#logoutButton")?.addEventListener("click", async () => {
     await api("/api/logout", { method: "POST" });
+    sessionCache = null;
     window.location.href = "/login";
   });
 
@@ -112,15 +151,15 @@ function renderLogin() {
   });
 }
 
-async function renderHome() {
+async function renderHome(user) {
   layout(`
     <section class="hero">
       <div>
         <p class="eyebrow">Ruta protegida /home</p>
         <h1>Explora Pokemon con sesion segura</h1>
-        <p class="muted">Esta pantalla solo carga si el servidor valida la cookie HttpOnly.</p>
+        <p class="muted">Esta pantalla solo carga cuando SecureRoute valida la sesion desde el frontend.</p>
       </div>
-      <div class="session-pill" id="sessionBox">Validando sesion...</div>
+      <div class="session-pill" id="sessionBox">Sesion: ${user.name}</div>
     </section>
     <section>
       <div class="section-heading">
@@ -134,8 +173,7 @@ async function renderHome() {
   `);
 
   try {
-    const [session, list] = await Promise.all([api("/api/session"), api("/api/pokemon")]);
-    document.querySelector("#sessionBox").textContent = `Sesion: ${session.user.name}`;
+    const list = await api("/api/pokemon");
     document.querySelector("#pokemonGrid").innerHTML = list.pokemon
       .map((pokemon) => pokemonCard(pokemon))
       .join("");
@@ -259,9 +297,31 @@ function showAuthError(error) {
   `;
 }
 
-function renderRoute() {
-  const pathname = window.location.pathname === "/" ? "/login" : window.location.pathname;
+async function renderRoute() {
+  let pathname = window.location.pathname;
+
+  if (pathname === "/") {
+    window.history.replaceState({}, "", "/login");
+    pathname = "/login";
+  }
+
   const view = routes[pathname] || renderLogin;
+
+  if (protectedRoutes.has(pathname)) {
+    await secureRoute(view);
+    return;
+  }
+
+  if (pathname === "/login") {
+    try {
+      await getCurrentSession();
+      replaceRoute("/home");
+      return;
+    } catch {
+      sessionCache = null;
+    }
+  }
+
   view();
 }
 

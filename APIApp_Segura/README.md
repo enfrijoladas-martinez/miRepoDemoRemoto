@@ -3,9 +3,10 @@
 Mini aplicacion para la actividad:
 
 - Consume PokeAPI.
-- La unica ruta publica es `/login`.
+- La unica ruta publica del frontend es `/login`.
 - Usa cookie `HttpOnly` para guardar la sesion.
-- Protege `/home`, `/detalles` y `/filtran` desde el servidor.
+- Protege `/home`, `/detalles` y `/filtran` con un `SecureRoute` en el frontend.
+- Mantiene las APIs protegidas en backend para que no se puedan consumir sin sesion.
 
 ## Ejecutar
 
@@ -35,9 +36,9 @@ password: 1234
 
 ## Rutas
 
-- `/login`: publica.
-- `/home`: protegida, lista Pokemon desde PokeAPI.
-- `/detalles`: protegida, consulta el detalle por nombre o id.
-- `/filtran`: protegida, filtra la lista recibida desde PokeAPI.
+- `/login`: publica en el frontend.
+- `/home`: protegida por `secureRoute`, lista Pokemon desde PokeAPI.
+- `/detalles`: protegida por `secureRoute`, consulta el detalle por nombre o id.
+- `/filtran`: protegida por `secureRoute`, filtra la lista recibida desde PokeAPI.
 
 La cookie se crea con `HttpOnly`, `SameSite=Strict` y `Max-Age`. Si el servidor esta detras de HTTPS tambien agrega `Secure`.
