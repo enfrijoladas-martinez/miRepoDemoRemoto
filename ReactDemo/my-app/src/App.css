@@ -1,0 +1,6 @@
+.app{max-width:900px;margin:0 auto;text-align:center}
+h1{font-size:2.5rem;background:linear-gradient(135deg,#ff6b6b,#ee5a24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.5rem}
+.sub{color:#94a3b8;margin-bottom:2rem}
+.nav-btns{display:flex;gap:1rem;justify-content:center;margin-top:2rem}
+.nav-btns button{padding:12px 30px;border:none;border-radius:12px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-size:1rem;cursor:pointer;transition:.3s}
+.nav-btns button:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(102,126,234,.4)}

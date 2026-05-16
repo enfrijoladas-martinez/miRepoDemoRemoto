@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Control de Asistencia</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <h1>📋 Asistencia</h1>
+    <h2>Grupos</h2>
+    <ul id="grupos-list"></ul>
+    <button id="btn-nuevo-grupo">+ Nuevo Grupo</button>
+  </aside>
+  <main id="main">
+    <div id="seleccionar-grupo" class="placeholder"><p>Selecciona un grupo para empezar</p></div>
+    <div id="vista-grupo" style="display:none">
+      <header id="grupo-header">
+        <h2 id="grupo-titulo"></h2>
+        <div id="grupo-acciones">
+          <button class="tab active" data-tab="asistencia">Asistencia</button>
+          <button class="tab" data-tab="dashboard">Dashboard</button>
+          <button id="btn-editar-grupo">✏️ Editar</button>
+          <button id="btn-eliminar-grupo" class="danger">🗑️ Eliminar</button>
+        </div>
+      </header>
+      <div id="tab-asistencia" class="tab-content">
+        <div class="toolbar">
+          <input type="date" id="fecha-asistencia" />
+          <button id="btn-nuevo-alumno">+ Alumno</button>
+        </div>
+        <table><thead><tr><th>#</th><th>Alumno</th><th>Presente</th><th>Acciones</th></tr></thead><tbody id="asistencia-body"></tbody></table>
+      </div>
+      <div id="tab-dashboard" class="tab-content" style="display:none">
+        <div class="toolbar"><h3>📊 Estadísticas</h3></div>
+        <div id="dashboard-resumen"></div>
+        <table><thead><tr><th>Alumno</th><th>Clases</th><th>Presentes</th><th>Ausencias</th><th>%</th></tr></thead><tbody id="dashboard-body"></tbody></table>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="modal-overlay" style="display:none"><div id="modal-content"><h3 id="modal-title"></h3><div id="modal-body"></div><div class="modal-btns"><button id="modal-ok">Aceptar</button><button id="modal-cancel">Cancelar</button></div></div></div>
+<script src="app.js"></script>
+</body>
+</html>

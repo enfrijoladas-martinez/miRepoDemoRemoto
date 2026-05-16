@@ -1,0 +1,7 @@
+.app { max-width:600px; margin:0 auto; padding:2rem; text-align:center }
+h1 { font-size:2rem; margin-bottom:2rem; background:linear-gradient(135deg,#00d2ff,#3a7bd5); -webkit-background-clip:text; -webkit-text-fill-color:transparent }
+.tabs { display:flex; gap:0.5rem; justify-content:center; margin-bottom:2rem }
+.tabs button { padding:0.7rem 1.5rem; border:2px solid #3a7bd5; border-radius:12px; background:transparent; color:#3a7bd5; font-size:1rem; cursor:pointer; transition:all 0.3s }
+.tabs button:hover { background:rgba(58,123,213,0.2) }
+.tabs button.activo { background:#3a7bd5; color:#fff }
+.contenido { background:rgba(255,255,255,0.05); padding:2rem; border-radius:16px; min-height:200px }

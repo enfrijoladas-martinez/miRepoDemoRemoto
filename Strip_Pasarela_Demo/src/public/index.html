@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Pasarela de Pago - Elías</title><style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;min-height:100vh;display:flex;align-items:center;justify-content:center}
+.contenedor{text-align:center;padding:3rem;background:rgba(255,255,255,.05);border-radius:24px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+h1{font-size:2.5rem;margin-bottom:1rem;background:linear-gradient(135deg,#f093fb,#f5576c);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{margin-bottom:2rem;color:#94a3b8;font-size:1.1rem}
+.precio{font-size:2rem;margin-bottom:2rem;padding:1rem;background:rgba(255,255,255,.05);border-radius:12px}
+button{padding:16px 50px;border:none;border-radius:14px;background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;font-size:1.2rem;cursor:pointer;transition:.3s;font-weight:600}
+button:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(102,126,234,.4)}
+button:active{transform:scale(.95)}
+.items{margin-bottom:2rem;text-align:left;display:inline-block}
+.items li{padding:.5rem 0;list-style:disc;color:#cbd5e1}
+</style></head>
+<body>
+<div class="contenedor">
+  <h1>🛒 Demo de Pago</h1>
+  <p class="sub">Pasarela de pago con Stripe - Elías Martínez</p>
+  <ul class="items">
+    <li>💻 Laptop Gamer - $25,000 MXN</li>
+    <li>🖱️ Mouse RGB x2 - $3,000 MXN</li>
+  </ul>
+  <div class="precio">🧾 Total: $28,000 MXN</div>
+  <button id="btn-pagar">💳 Pagar ahora</button>
+</div>
+<script>
+document.getElementById('btn-pagar').addEventListener('click', async () => {
+  const res = await fetch('/pagar', { method: 'POST' })
+  const data = await res.json()
+  window.location.href = data.url
+})
+</script>
+</body>
+</html>

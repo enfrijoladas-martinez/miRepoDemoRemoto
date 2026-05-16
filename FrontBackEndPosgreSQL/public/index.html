@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Streaming - Supabase</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="contenedor">
+  <h1>🎬 Gestión de Suscripciones (Supabase)</h1>
+  <form id="formulario">
+    <input type="hidden" id="id">
+    <label>Nombre</label><input type="text" id="nombre" required>
+    <label>Email</label><input type="email" id="email" required>
+    <label>Género</label>
+    <select id="genero"><option>Masculino</option><option>Femenino</option><option>Otro</option></select>
+    <label>Servicios</label>
+    <div class="checks">
+      <label><input type="checkbox" value="Netflix" class="servicio"> Netflix</label>
+      <label><input type="checkbox" value="Spotify" class="servicio"> Spotify</label>
+      <label><input type="checkbox" value="Disney+" class="servicio"> Disney+</label>
+      <label><input type="checkbox" value="Prime" class="servicio"> Prime</label>
+      <label><input type="checkbox" value="HBO" class="servicio"> HBO</label>
+    </div>
+    <button type="submit">💾 Guardar</button>
+  </form>
+  <h2>Suscriptores</h2>
+  <table><thead><tr><th>Nombre</th><th>Email</th><th>Género</th><th>Servicios</th></tr></thead><tbody id="tabla"></tbody></table>
+</div>
+<script src="front-index.js"></script>
+</body>
+</html>

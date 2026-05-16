@@ -1,0 +1,8 @@
+{
+  "name": "profelist-elias",
+  "version": "1.0.0",
+  "description": "App de escritorio para control de asistencia - Elías",
+  "main": "main.js",
+  "scripts": { "start": "electron ." },
+  "dependencies": { "electron": "^33.0.0", "mysql2": "^3.11.0" }
+}

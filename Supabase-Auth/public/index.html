@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Auth Supabase - Elías</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#1a1a2e,#16213e);color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.container{max-width:400px;width:90%;padding:2.5rem;background:rgba(255,255,255,.05);border-radius:24px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px);text-align:center}
+h1{font-size:2rem;margin-bottom:2rem;background:linear-gradient(135deg,#667eea,#764ba2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.toggle{display:flex;justify-content:center;align-items:center;gap:15px;margin-bottom:1.5rem}
+.toggle span{font-weight:600}
+.switch{position:relative;display:inline-block;width:55px;height:28px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#22c55e;transition:.4s;border-radius:20px}
+.slider:before{position:absolute;content:"";height:22px;width:22px;left:3px;bottom:3px;background:#fff;transition:.4s;border-radius:50%}
+input:checked+.slider{background:#667eea}
+input:checked+.slider:before{transform:translateX(27px)}
+form{display:none}
+form.activo{display:block}
+input{width:100%;padding:12px 16px;margin-bottom:15px;border:2px solid rgba(255,255,255,.2);border-radius:12px;background:rgba(255,255,255,.05);color:#fff;font-size:1rem;outline:none;transition:.3s}
+input:focus{border-color:#667eea}
+button{width:100%;padding:12px;border:none;border-radius:12px;font-size:1rem;cursor:pointer;font-weight:600;transition:.3s}
+.login-btn{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff}
+.signup-btn{background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff}
+button:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.3)}
+</style></head>
+<body>
+<div class="container">
+  <h1>🔐 Auth Supabase</h1>
+  <div class="toggle">
+    <span>Iniciar</span>
+    <label class="switch"><input type="checkbox" id="toggleAuth"><span class="slider"></span></label>
+    <span>Registro</span>
+  </div>
+  <form id="loginForm" action="/ingresar" method="POST" class="activo">
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit" class="login-btn">Iniciar Sesión</button>
+  </form>
+  <form id="signupForm" action="/registrar" method="POST">
+    <input type="email" name="email" placeholder="Correo electrónico" required>
+    <input type="password" name="password" placeholder="Contraseña" required>
+    <button type="submit" class="signup-btn">Crear Cuenta</button>
+  </form>
+</div>
+<script>
+document.getElementById('toggleAuth').addEventListener('change', function() {
+  document.getElementById('loginForm').classList.toggle('activo')
+  document.getElementById('signupForm').classList.toggle('activo')
+})
+</script>
+</body></html>
